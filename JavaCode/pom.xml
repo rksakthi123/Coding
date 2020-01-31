@@ -21,7 +21,7 @@
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>{testng}</suiteXmlFile>
+                        <suiteXmlFile>${testng}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
