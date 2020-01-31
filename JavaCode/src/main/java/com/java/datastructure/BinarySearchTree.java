@@ -46,12 +46,35 @@ public class BinarySearchTree {
 	public static void main(String[] args) {
 		BinarySearchTree obj=new BinarySearchTree();
 		obj.insert(10);
-		obj.insert(20);
+		obj.insert(5);
 		obj.insert(30);
-		
+		System.out.println("Pre order:");
+		obj.printPreorder(root);
+		System.out.println("\n================");
+		System.out.println("In order:");
 		obj.printInorder(root);
+		System.out.println("\n================");
+		System.out.println("Post order:");
+		obj.printPostorder(root);
 
 	}
+	 void printPostorder(BST node) 
+	    { 
+	        if (node == null) 
+	            return;
+	        printPostorder(node.left); 
+	        printPostorder(node.right); 
+	        System.out.print(node.getData() + " "); 
+	    }
+	 void printPreorder(BST node) 
+	    { 
+	        if (node == null) 
+	            return;
+	       
+	        System.out.print(node.getData() + " "); 
+	        printPreorder(node.left); 
+	        printPreorder(node.right); 
+	    }
 	 void printInorder(BST node) 
 	    { 
 	        if (node == null) 
@@ -65,7 +88,7 @@ public class BinarySearchTree {
 		if(root==null) {
 			return new BST(value);
 		}
-		if(root.getData()<value) {
+		if(root.getData()>value) {
 			root.left=insertNode(root.left, value);
 		}else {
 			root.right=insertNode(root.right, value);

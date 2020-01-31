@@ -1,5 +1,7 @@
 package com.java.datastructure;
 
+import org.testng.annotations.Test;
+
 public class LinkedList {
 
 	Node head;
@@ -11,6 +13,18 @@ public class LinkedList {
 	}
 
 	public static void main(String[] args) {
+		LinkedList ll = new LinkedList();
+		ll.addFirst(10);
+		ll.addFirst(30);
+		ll.addFirst(40);
+		ll.addAfter(50, 40);
+		ll.addBefore(60, 40);
+		ll.addLast(20);
+		ll.remove(50);
+		ll.display();
+	}
+	@Test(groups="Test1")
+	public void testLinkedList() {
 		LinkedList ll = new LinkedList();
 		ll.addFirst(10);
 		ll.addFirst(30);
